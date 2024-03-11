@@ -1,54 +1,71 @@
 const http = require('http');
 const fs = require('fs');
+const path = require('path');
 
 
-const puerto = 9090;
-const page = 'index.html';
+const puerto = 9091;
+const page = 'main.html';
 const page_error = 'error.html';
+const art1 = 'art1.html';
+const art2 = 'art2.html';
+const art3 = 'art3.html';
+
+
+function info(req){
+    //Construir objeto url con la url de la solicitud
+    let url = req.url==='/'?'/main.html':req.url;
+    const resource = path.join(__dirname,url);
+    return resource;
+}
 
 const server = http.createServer((req, res) => {
 
     console.log('Petición recibida!')
-
-    //-- Valores de la respuesta por defecto
-    let code = 200;
-    let code_msg= 'OK';
-    let pagina = page;
+    
+    dir = info(req);
 
     const url = new URL(req.url, 'http://' + req.headers['host']);
 
-    if (url.pathname === '/') {
+    if (dir.pathname === '/') {
         pagina = page;
-    } else {
+    } else if (dir.pathname === '/index.html') {
+        pagina = page;
+    } else if (dir.pathname === '/art1.html') {
+        pagina = art1;
+    } else if (dir.pathname === '/art2.html') {
+        pagina = art2;
+    } else if (dir.pathname === '/art3.html') {
+        pagina = art3;
+    } else {    
         pagina = page_error;
-        code = 404;
-        code_msg = 'Not found';
     }
+    
+
+    const tipo = {
+        'jpg' : 'image/jpg',
+        'jpeg' : 'image/jpeg',
+        'html': 'text/html',
+        'css' : 'text/css',
+        'avif' : 'image/avif',
+    };
 
 
     //-- Leemos el archivo de forma asincrónica
-    fs.readFile(pagina, 'utf-8', (err, data) => {
+    fs.readFile(dir, (err, data) => {
         //-- Para gestión de errores hacemos if-else
         if (err) { //-- Ha ocurrido algún error
             console.log('Error!')
             console.log(err.message);
-        }
+            res.statusCode = 404;
+            res.statusMessage = 'Not found';
+        } else {
 
-        //-- Si hay datos en el cuerpo, se imprimen
-        req.on('data', (cuerpo) => {
-            console.log(`Contenido: ${cuerpo}`);
-        });
-
-        //-- Cuando llegue al final del mensaje de solicitud:
-        req.on('end', () => {
-
-            console.log('Fin del mensaje');
-            res.statusCode = code;
-            res.statusMessage = code_msg;
-            res.setHeader('Content-Type', 'text/html');
+            res.statusMessage = 'OK' ;
+            res.writeHead( 200, {'Content-Type': tipo});
             res.write(data);
             res.end();
-        });
+        }
+
     });
 });
 
