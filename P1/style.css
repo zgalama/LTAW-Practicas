@@ -1,7 +1,58 @@
-h2{
+body{
+    background-image: url(fondo.jpg);
+    background-repeat: repeat;
+}
 
+
+h2{
+ 
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px grey;
+   
+}
+
+#nombre{
     font-size: 30px;
     text-align: center;
     text-shadow: 2px 2px grey;
-   
+    margin-right: 660px;
+    margin-left: 660px;
+    color: black;
 }
+
+
+#articulos{
+    background-color: rgba(27, 27, 27, 0.89);
+    margin: 0 auto;
+    padding-bottom: 35px;
+    border-radius: 15px;
+
+}
+
+#disco{
+    height: 305px;
+    width: 300px;
+    margin-left: 32px;
+    margin-right: 32px;
+
+}
+#acc{
+    height: 325px;
+    width: 200px;
+    margin-right: 65px;
+    margin-left: 65px;
+}
+#cami{
+    height: 305px; 
+    width: 250px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+td{
+    text-align: center;
+}
+
+

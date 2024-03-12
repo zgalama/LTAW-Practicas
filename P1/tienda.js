@@ -23,8 +23,8 @@ const server = http.createServer((req, res) => {
     console.log('Petición recibida!')
     
     dir = info(req);
+    console.log(dir)
 
-    const url = new URL(req.url, 'http://' + req.headers['host']);
 
     if (dir.pathname === '/') {
         pagina = page;
