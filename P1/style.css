@@ -6,25 +6,32 @@ body{
 
 h2{
  
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     color: white;
     text-shadow: 1px 1px grey;
    
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
 #nombre{
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     text-shadow: 2px 2px grey;
-    margin-right: 660px;
-    margin-left: 660px;
+    margin-right: 600px;
+    margin-left: 600px;
+    margin-top: 15px;
     color: black;
 }
 
 
 #articulos{
-    background-color: rgba(27, 27, 27, 0.89);
+    background-color: rgba(27, 27, 27, 0.938);
     margin: 0 auto;
     padding-bottom: 35px;
     border-radius: 15px;
