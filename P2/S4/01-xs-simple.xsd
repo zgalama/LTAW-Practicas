@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Elemento raíz de mi lenguaje -->
+    <!-- Tipo de elementos:
+    'xs:string', 'xs:decimal', 'xs:integer'
+    'xs:boolean', 'xs:date', 'xs:time'-->
+    <xs:element name="tienda">
+
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="producto" type="xs:string" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+
+    </xs:element>
+
+</xs:schema>
