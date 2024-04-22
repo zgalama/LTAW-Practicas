@@ -1,0 +1,337 @@
+ETIQUETAS CSS!
+
+/*...*/ Los comentarios se escriben así.
+
+Para estilos en línea, no hará falta de hacerle un selector.
+<h2 style="color:blue;font-size:20px;"> Bienvenidos a la web </h2>
+
+El selector "*" es universal, es decir, lo aplica a todos los elementos del documento.
+*{
+    color:#911199;
+}
+
+Hay selectores de clase, permiten definir estilos para aquellas etiquetas cuyo atributo class sea el nombre del selector utilizado.
+Estos van precedidos por un punto "."
+
+.error
+{
+    color: #ff0000;
+}
+
+<p class='error'> ¡Error! No ha introducido bien sus datos </p>
+
+También lo podemos aplicar junto con un selector:
+
+.texto span
+{
+    font-style: italic;
+    color: #ff0000;
+}
+
+Esto hace que dentro de esa clase, sólo los que contengan la etiqueta <span> tendrán las modificaciones especificadas.
+
+Los selectores ID aon los más especificos, viene precedido por el símbolo #.
+
+<div id='cabecera'>...></div>
+
+#cabecera
+{
+    background-color: #ff0000;
+    height: 100 px;
+    weidth: 100 px;
+}
+
+La diferencia de los ID y las clases, es que los ID son únicos, no pueden haber repetidos en toda la página, se usan de forma exclusiva. 
+En cambio las clases es de una forma general. Tienen más prioridad los ID.
+
+UTILIZACION DE ELEMENTOS Y SEUDOELEMENTOS
+
+::first-line permite definir una regla de estilo a la primera línea de texto.
+
+p::first-line 
+{
+    font-size:2em,
+}
+
+::first-letter permite definir una regla de estilo a la primera letra del texto.
+
+p::first-letter
+{
+    font-size:2em;
+}
+
+::before este seudoelemento permite introducir contenido antes de cada elemento.
+
+p::before
+{
+    content:'Importante:';
+}
+
+::after este seudoelemento permite introducir contenido después de cada elemento.
+
+p::after
+{
+    content:'-Gabriel García Márquez';
+    font-style: italic;
+}
+
+
+UTILIZACIÓN DE CLASES Y SEUDOCLASES
+
+:link afecta a los enlaces no visitados
+
+a:link
+{
+    color: #00a5a7;
+}
+
+:visited podemos definir las reglas para los enlaces que han sido visitados
+
+a:visited
+{
+    color: #0fb5a7;
+}
+
+:hover podemos definir una regla que afecte a los ítem sobre los que se encuentre el puntero del ratón.
+
+a:hover
+{
+    color: #00a5a7;
+    text-decoration: underline;
+}
+
+:focus permite definir una regla para el ítem selecionado
+
+input:focus
+{
+    background-color: #00a5a7;
+}
+
+:active permite definir una regla que afecta a un ítem justo en el instante que es activado por el usuario.
+
+input:active
+{
+   background-color: orange;
+}
+
+:target podemos aplicar una regla a la última zona accedida a través del link interno.
+
+:target
+{
+    color: #00a5a7;
+}
+
+:first-child permite definir reglas que afecta al selector al que va asociada, si es el primero dentro del nodo padre del selector puesto, 
+se aplica la regla.
+
+p:first-child
+{
+    background-color: #00a5a7;
+}
+
+:last-child permite definir una regla de estilo a aquellos elementos que sean los últimos del nodo padre
+
+p:last-child
+{
+    background-color: #00a5a7;
+}
+
+:only-child permite definir una regla que afecte a aquellos elementos que sean "hijos únicos" del nodo padre, es decir, con un nodo hijo.
+
+p:only-child
+{
+    background-color: #00a5a7;
+}
+
+:nth.child() permite indicar al hijo que queremos que afecte un estilo en concreto
+
+p:nth-child(4)
+{
+    background-color: #00a5a7;
+}
+
+:lang() permite definir una regla que afecta a un ítem cuya palabra en texto, sea el mimo que el valor de lang.
+
+p:lang(adobo)
+{
+    background: #00a5a7;
+}
+
+:enabled podemos definir una regla de estilo que afectan a elementos, generalmente de tipo input que estén enabled.
+
+input:enabled
+{
+    border:2px solid #16ff16;
+}
+
+:disabled lo contrario de la anterior regla, pero aquí rellenamos de un color para que se entienda que esta deshabilitado.
+
+input:disabled
+{
+    background: #000;
+}
+
+<input type="text" disabled="disabled">
+
+:checked definir regla que afecte a los input cuando estén chequeados.
+
+input:checked
+{
+    margin-left: 50px; #se mueven 50px cuando se hace click
+}
+
+<form></form>
+<input type="radio" checked="checked" value="masculino" name="genero">
+
+:root permite definir reglas a los elementos padres
+
+:root
+{
+    background: url('foto.jpg'); #poner imagen de fondo
+}
+
+:nth-of-type(n) definir una regla que afecte a n elemento del tipo que preceda a la definicion de la seudoclase
+:nth-last-of-type(n) definir una regla que afecte a n elemento del tipo que preceda a la definicion de la seudoclase
+:first-of-type definir una regla que afecte al primer elemento del tipo que preceda a la definicion de la seudoclase
+:last-of-type definir una regla que afecte al último elemento del tipo que preceda a la definicion de la seudoclase
+:only-of-type definir una regla que afecte solo a aquellos elementos que son únicos, es decir que sólo haya uno en el nodo padre
+del tipo de elemento que preceda a la definicion de la seudoclase.
+:read-only definir una regla que afecte sólo a los input que sean de solo lectura.
+:required especificar una regla de estilo para aquellos campos que sean requeridos
+:empty para las etiquetas vacías
+:invalid permite asignar un estilo en un input cuyo contenido no se adecúe al valor esperado. ej: emails
+:not(selector) nos permite indicar una regla que afectará a todos los elementos que no sean de tipo 'selector'
+
+
+SELECTORES DE ATRIBUTOS 
+Permiten crear reglas de estilos para elementos de la web en función de sus atributos.
+
+elemento[atributo], permite definir una regla que afecte a aquellos que tengan establecido algún valor para 'atributo'
+elemento[atributo=valor], afecta a aquellos elementos que tengan para el 'atributo' establecido un valor igual a 'valor'.
+elemento[atributo~=valor], afecta a aquellos elementos que tenga como atributo al menos UNO que se llame 'valor' cuando contiene varios 
+valores en la clase.
+
+ATRIBUTOS DE SELECTOR CSS3
+
+elemento[atributo^="valor"], definir reglas cuyo atributo comience por la cadena "valor"
+elemento[atributo$="valor"], definir reglas cuyo atributo acabe por la cadena "valor"
+elemento[atributo*="valor"], definir reglas para aquellos elementos cuyo atributo contengan la cadena "valor".
+
+
+UTILIZACIÓN DE LOS ATRIBUTOS DE ESTILO 
+
+font-family especifica el tipo de letra que queremos usar (Arial, Helvetica, Sans-Serif, Courier New...)
+Si en el navegador no se consigue mostrar alguna fuente de forma exitosa, se recurre al selector:
+@font-face permite definir una tipo de letra y en caso de no tenerla a la hora del servicio, se descargará desde nuestro servidor.
+
+@font-face {
+    font-family: Delicious Roman;
+    src: URL;
+    font-weight: 400;
+}
+
+Definido esto, tenemos asegurado el tipo de fuente sin preocupaciones.
+
+font-size tamaño de la fuente 
+font-style diferentes estilos
+font-weight peso de la fuente sinendo 400 lo normal, 100-900
+font-variant permite poner el texto con un formato conocido 'Versalitas', donde la primera letra mayúscula se caracteriza de las demás
+que son un poco más pequeñas. También admite la forma 'Normal' y 'Small-caps' (que es Versalitas). font-variant: small caps;
+
+Para referirnos al COLOR, tenemos distintas maneras, ya sea poniendo su nombre en inglés (menos recomendado), ponerlo de forma
+hexadecimal o en RGB(x,y,z). En páginas como paletton, podemos encontrar los colores correspondientes con sus letras/nums.
+
+background podemos cambiar el fondo de los ítem o de la página web entera.
+Admite varias propiedades:
+background-color, background-image y background-repeat 
+El background-repeat consiste en indicar si queremos que la imagen se repita de manera que ocupe todo el fondo (repeat), si queremos
+que solo se repita en el eje vertical (repeat-y), si queremos en el horizontal (repeat-x) o si NO queremos que se repita y esta aparezca
+una sola vez en el fondo (no-repeat).
+
+background-attachment indica si queremos que la imagen aparezca fija de fondo o si por el contrario queremos que esta se desplace junto 
+con la página al movernos de esta.
+Tiene dos atributos: scroll, fixed.
+
+background-position indica la posición donde comenzará la imagen del fondo.
+La posición puede darse con: left top, left center, left bottom, right top, right center, right bottom, center top, center center, 
+center bottom, posicionXposicionY (pix), posicionXposicionY (%)
+
+background-size indica el tamaño de la imagen del fondo. Se especifica con 'auto', 'pixeles', '%', 'cover', 'contain'.
+
+text-align definir la alineación del texto, con tres opciones: center, left, right, justify.
+text-decoration permite especificar la decoración del texto, con los siguientes atributos: none, underline, overline, line-through.
+text-indent permite definir la sangría de nuestra primera línea de texto. Se puede expresar mediante px, %, alineación, cm, puntos...
+
+text-overflow permite especificar lo que queremos que ocurra con el texto que sobresale del elemento raíz que lo contiene cuando
+tenemos el atributo overflow:hidden, cuando tenemos activado el modo oculto.
+Sus atributos son: 'clip' y 'ellipsis' que van acompañados del elemento 'text-overflow'.
+
+text-shadow podemos dibujar una sombra a nuestro texto. Sus parámetros son: h-shadow(OB), v-shadow(OB), blur-radius(OP), color(OP).
+text-transform podemos indicar el trato que queremos que se haga alguna transformación del texto relacionada con MAY o min. 
+Sus parámetros son: none, capitalize, uppercase, lowercase.
+
+BLOQUES
+
+line-height permite definir el interlineado del texto (distancia que hay entre cada línea de texto)
+Sus parámetros son: normal, un número, un tamaño fijo en px, cm, pugadas, picas o puntos y en %.
+
+letter-spacing permite definir el espacio existente entre caracteres. Sus parámetros son: normal o en números ya sean px, cm, puntos...
+word-spacing define el espacio existente entre palabras. Sus parámetros son: normal o en nº ya sean px, cm, ptos...
+white-space permite definir como queremos que el nav interprete los espacios en blanco que haya dentro de los párrafos o bloques de txt.
+Sus parámetros son: 
+normal: los espacios en blanco y los br se eliminan. Es el estado por defecto.
+nowrap: elimina los espacios en blanco sobrantes y TODOS los saltos de línea, por lo que se muestra TODO el txt en una línea.
+pre: no se eliminan los espacios en blanco sobrantes ni saltos de línea.
+pre-line: respeta los espacios en blanco, pero los br los optimiza para que el texto no se salga del elemento contenedor.
+pre-wrap: respeta los espacios en blanco, los br y ajusta las líneas para que el texto no se salga del elemento contenedor.
+
+TABLAS
+Los efectos que podemos aplicar a las tablas mediante estilos  son los relacionados a los bordes y disposición de las celdas.
+
+border-spacing permite definir el espacio entre los bordes de distintas celdas, suelen aparecer sin bordes en los nav.
+Para ver los bordes tenemos que añadir tras especificar la medida la palabra 'solid'.
+
+caption-side permite incluir una leyenda a la tabla en la parte superior o inferior de la misma. Sus atributos son: 'top' o 'bottom'.
+empty-cells permite ocultar el borde y el fondo de las celdas que estén vacías en la tabla. Tiene dos atributos: 'hide' y 'show'.
+
+Para el color simplemente basta con poner 'background-color' en lo que quieras y ya se aplica.
+
+LISTAS DE ELEMENTOS
+
+list-style-type permite indicar el tipo viñeta que se muestra en cada ítem de la lista.
+Sus posibles valores son: disc, circle, square, decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, 
+upper-latin, armenia, georgian, lower-alpha, upper-alpha, none.
+
+list-style-position indica si queremos que la viñeta de numeración aparezca dentro o fuera del elemento que contiene la lista.
+Sus atributos son: 'inside' y 'outside'.
+
+list-style-image incluye una imagen personalizada como viñeta, para ello incluimos la URL de la imagen que vayamos a implementar.
+
+
+MENUS
+Para definir un menu horizontal o vertical, serán mediantes listas no numeradas <ul>, donde haremos una clase e incluiremos en CSS
+un selector de tipo clase ul.menu. Para que sea vertical dentro de los selectores 'li a', añadimos display:block. Para que sea horizontal
+en el selector 'li', añadimos float:left.
+
+ANIMACIONES EN CSS3
+
+@keyframe nos permite definir una transición que el nav. hará de forma automática. 
+Con la definicion de la regla
+
+@keyframes example {
+    from {background-color: #ff00ea;}
+    to {background-color: #ff9c00;}
+}
+Con esto indicamos que pase de un color a otro, pero para poder utilizar dicha regla tenemos que aplicarla a un componente determinado,
+lo cual se aplica con la siguiente regla:
+
+div {
+    -webkit-animation-name: example; /* Chrome, Safari, Opera*/
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera*/
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+Con 'animation-name: example' indicamos que se realice la animación definida anteriormente y con 'animation-duration: 4s' indicamos 
+el tiempo de duracción de la misma..
+
