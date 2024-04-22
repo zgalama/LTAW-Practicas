@@ -13,13 +13,16 @@ body{
 }
    
 #izquierda {
+    width: 43.2%;
     float: left;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    text-align: center;
 }
 
 #foto{
-    width: 650px;
-    height: 650px;
-    border-radius: 15px;
+    width: 750px;
+    height: 750px;
 
 }
 

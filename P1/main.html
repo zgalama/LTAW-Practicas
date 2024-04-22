@@ -10,29 +10,66 @@
     <!--Hoja de estilo para la tienda-->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icono.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 
 <body>
-
-    <h2 id ="nombre"> MERCHANDISING ROSALIA </h2>
-    <div class="main">
-        <table id= "articulos">
-            <thead>
-                <td ><h2> ROPA </h2></td>
-                <td ><h2> DISCOS</h2></td>
-                <td ><h2> ACCESORIOS </h2></td>
-            </thead>
-            <tbody>
-                <td><a href="art3.html" ><img  id ="cami" src="camis.png" alt="imagen ropa"></a></td>
-                <td><a href="art1.html" ><img  id ="disco" src="discoo.jpg" alt="imagen disco"></a></td>
-                <td><a href="art2.html" ><img  id ="acc" src="acc.png" alt=" imagen accesorios"></a></td>
-            </tbody>
-
-        </table>
-    </div>
-
+    <header>
+        <div class="nav cont">
+            <a href="#" class="logo">MERCHANDISING ROSALIA</a>
+            <i class='bx bxs-shopping-bags' id ="carrito" data-quantitiy="0"></i>
+            
+        </div>
+    </header>
+    <section class="tienda cont">
+        <h2 class="section-title"> PRODUCTOS</h2>
+        <div class="shop-content">
+            <!-- PRODUCTO 1-->
+            <div class="product-box">
+                <img src="LA.jpg" alt="imagen ropa" class="product-img">
+                <h2 class="product-title">Los Angeles</h2>
+                <span class="precio">20€</span>
+                <i class='bx bx-shopping-bag add-cart' ></i>
+            </div>
+            <!-- PRODUCTO 2-->
+            <div class="product-box">
+                <img src="malamente.jpg" alt="imagen ropa" class="product-img">
+                <h2 class="product-title">Malamente</h2>
+                <span class="precio">20€</span>
+                <i class='bx bx-shopping-bag add-cart' ></i>
+            </div>
+            <!-- PRODUCTO 3-->
+            <div class="product-box">
+                <img src="motomami.jpg" alt="imagen ropa" class="product-img">
+                <h2 class="product-title">Motomami</h2>
+                <span class="precio">20€</span>
+                <i class='bx bx-shopping-bag add-cart' ></i>
+            </div>
+            <!-- PRODUCTO 4-->
+            <div class="product-box">
+                <img src="cami.png" alt="imagen ropa" class="product-img">
+                <h2 class="product-title">CAMISETA</h2>
+                <span class="precio">40€</span>
+                <i class='bx bx-shopping-bag add-cart' ></i>
+            </div>
+            <!-- PRODUCTO 5-->
+            <div class="product-box">
+                <img src="sudadera.PNG" alt="imagen ropa" class="product-img">
+                <h2 class="product-title">SUDADERA</h2>
+                <span class="precio">50€</span>
+                <i class='bx bx-shopping-bag add-cart' ></i>
+            </div>
+            <!-- PRODUCTO 6-->
+            <div class="product-box">
+                <img src="casco.PNG" alt="imagen ropa" class="product-img">
+                <h2 class="product-title">Casco</h2>
+                <span class="precio">80€</span>
+                <i class='bx bx-shopping-bag add-cart' ></i>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
