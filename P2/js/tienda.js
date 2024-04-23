@@ -5,7 +5,8 @@ const path = require('path');
 
 const puerto = 9091;
 const page = 'main.html';
-const page_error = 'error.html';
+const page_err = 'error.html';
+const page_error = fs.readFileSync(page_err);
 const art1 = 'art1.html';
 const art2 = 'art2.html';
 const art3 = 'art3.html';
@@ -25,7 +26,6 @@ const server = http.createServer((req, res) => {
     dir = info(req);
     console.log(dir)
 
-
     if (dir.pathname === '/') {
         pagina = page;
     } else if (dir.pathname === '/index.html') {
@@ -36,7 +36,7 @@ const server = http.createServer((req, res) => {
         pagina = art2;
     } else if (dir.pathname === '/art3.html') {
         pagina = art3;
-    } else {    
+    } else {
         pagina = page_error;
     }
     
@@ -47,6 +47,7 @@ const server = http.createServer((req, res) => {
         'html': 'text/html',
         'css' : 'text/css',
         'avif' : 'image/avif',
+        'gif' : 'image/gif'
     };
 
 
@@ -56,8 +57,10 @@ const server = http.createServer((req, res) => {
         if (err) { //-- Ha ocurrido algún error
             console.log('Error!')
             console.log(err.message);
-            res.statusCode = 404;
-            res.statusMessage = 'Not found';
+
+            res.write(page_error);
+            res.end();
+
         } else {
 
             res.statusMessage = 'OK' ;
