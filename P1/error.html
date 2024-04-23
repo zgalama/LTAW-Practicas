@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icono.png" type="image/x-icon">
-    <title>¡ERROR!</title>
 
-    <!--Hoja de estilo para la tienda-->
+    <link rel="icon" href="icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="error.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>L.A </title>
 
 </head>
 
 
 <body>
-    <div>
-        <p>Esto es una pagina incorrecta...</p>
+    <header>
+        <div class="nav cont">
+            <a href="main.html" class="logo">MERCHANDISING ROSALIA</a>
+            <i class='bx bxs-shopping-bags' id="carrito" data-quantitiy="0"></i>
+
+        </div>
+    </header>
+
+    <div class="container-error">
+        <div class="img">
+            <img src="rosi.gif" alt="gif rosalia">       
+        </div>
+        <div class="text">
+            <h3>Vaya... parece que te has equivocado de página.</h3>
+        </div>
     </div>
 
 
+    <footer>
+        <p><a href="main.html"> Volver a la página principal.</a></p>
+    </footer>
+
+
 </body>
+
 </html>

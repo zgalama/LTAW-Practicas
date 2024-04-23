@@ -1,0 +1,124 @@
+/* Fuentes Google */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+body{
+    background-image: url(fondon.jpeg);
+    background-repeat: repeat;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px hsla(350, 54%, 0%, 0.788);
+    z-index: 100;
+    background-color: #cc2929;
+}
+
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+
+}
+
+.cont {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+  }
+
+.logo{
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+}
+
+#carrito{
+    position: relative;
+    font-size: 1.8rem;
+    cursor:pointer;
+}
+
+#carrito[data-quantitiy]::after{
+    contain:''; 
+}
+
+#carrito[data-quantitiy]::after{
+    contain:''; 
+    position: absolute;
+    top:0;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    background: var(--text-color);
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.829);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.container-error{
+    margin-top: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.img{
+    padding-right: 50px;
+    max-width: 100%;
+}
+
+.text{
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.788);
+    border-radius: 5px;
+}
+
+/* Responsive */
+
+@media (max-width:1080px) {
+    .nav{
+        padding: 14px 0;
+    }
+    section{
+        padding: 3rem 0 2rem;
+    }
+
+    .cont{
+        margin: 0 auto;
+        width:90%;
+    }
+}
