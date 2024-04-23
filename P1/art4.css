@@ -22,7 +22,6 @@ body{
 
 img{
     max-width: 100%;
-
 }
 
 header{
@@ -54,7 +53,7 @@ main{
 }
 
 .container-img{
-    max-width: 45%;
+    max-width: 35%;
     background-color: white;
 }
 
@@ -80,9 +79,30 @@ main{
 
 
 .container-details{
-    padding: 30px 0;
+    padding: 15px 0;
+    border-bottom: 1px solid black;
 }
 
+.talla{
+    display: flex;
+    align-items: center;
+
+}
+
+.talla label{
+    width: 100px;
+    color: black;
+    font-weight: 700;
+}
+
+.talla select{
+    width: 300px;
+    border: none;
+    padding: 12px 15px;
+    background-color: white;
+    outline: none;
+    color: rgb(214, 20, 20);
+}
 
 .container-add-cart{
     display: flex;
@@ -122,7 +142,7 @@ main{
 
 .btn-in-decrement i{
     font-size: 11px;
-    color: grey;
+    color: black;
     cursor: pointer;
 }
 

@@ -54,7 +54,7 @@ main{
 }
 
 .container-img{
-    max-width: 45%;
+
     background-color: white;
 }
 
@@ -78,6 +78,31 @@ main{
     font-weight: 300;
 }
 
+.container-details{
+    padding: 15px 0;
+    border-bottom: 1px solid black;
+}
+
+.talla{
+    display: flex;
+    align-items: center;
+
+}
+
+.talla label{
+    width: 100px;
+    color: black;
+    font-weight: 700;
+}
+
+.talla select{
+    width: 300px;
+    border: none;
+    padding: 12px 15px;
+    background-color: white;
+    outline: none;
+    color: rgb(214, 20, 20);
+}
 
 .container-details{
     padding: 30px 0;

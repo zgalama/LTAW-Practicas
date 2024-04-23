@@ -22,7 +22,6 @@ body{
 
 img{
     max-width: 100%;
-
 }
 
 header{
@@ -54,7 +53,7 @@ main{
 }
 
 .container-img{
-    max-width: 45%;
+    max-width: 35%;
     background-color: white;
 }
 
