@@ -1,0 +1,34 @@
+[
+    {"producto": [
+        {
+            "nombre": "Malamente",
+            "descripcion": "Segundo disco de Rosalia con temas inéditos como son: Malamente, Pienso en tu mirá, Bagdad...",
+            "stock": 5
+        },
+        {
+            "nombre": "Los Angeles",
+            "descripcion": "Primer disco de Rosalia con temas inéditos como son: Catalina, De plata, Te Venero...",
+            "stock": 6 
+        },
+        {
+            "nombre": "Motomami",
+            "descripcion": "Tercer disco de Rosalia con temas inéditos como son: Delirio de Grandeza, Saoko, La Combi Versace...",
+            "stock": 3 
+        }
+    ]},
+    {"usuarios": [
+        {
+            "user": "root"
+        },
+        {
+            "user": "zaira"
+        }
+    ]},
+    {"pedidos": [
+        {
+            "id": 1,
+            "direccion": "Calle Cabreja",
+            "tarjeta":"3549-4353-5633-5324"
+        }
+    ]}
+]
