@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/login_r.css">
+    <link rel="icon" href="../fotos/icono.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../js/log.js" defer></script>
+    <title>signin-signup</title>
+</head>
+<body>
+    <header>
+        <div class="nav cont">
+            <a href="../html/main.html" class="logo">MERCHANDISING ROSALIA</a>
+            <i class='bx bxs-shopping-bags' id ="carrito" data-quantitiy="0"></i>
+            
+        </div>
+    </header>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form">
+                <h2 class="title">Inicia sesión</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Usuario">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <input type="submit" value="Entrar" class="btn">
+            
+            </form>
+            <form action="" class="sign-up-form">
+                <h2 class="title">Registro</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Usuario">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Email">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <input type="submit" value="Regístrame!" class="btn">
+               
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>¿Estás registrado?</h3>
+                    <p>Haz click en el botón para poder entrar a tu cuenta.</p>
+                    <button class="btn" id="sign-in-btn">Inicia sesión</button>
+                </div>
+                <img src="signin.svg" alt="" class="image">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>¿Nuevo usuario?</h3>
+                    <p>Regístrate haciendo click en el botón.</p>
+                    <button class="btn" id="sign-up-btn">Registro</button>
+                </div>
+                <img src="signup.svg" alt="" class="image">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

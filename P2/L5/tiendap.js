@@ -17,18 +17,21 @@ tienda.forEach((element) => {
         console.log('Producto ' + (index +1) + ':');
         console.log('Nombre: ' + pr.nombre);
         console.log('Descripcion: ' + pr.descripcion);
+        console.log('Precio: ' + pr.precio);
         console.log('Stock: ' + pr.stock);
     });
 
     users?.forEach((us, index) => {
         console.log('Usuario ' + (index +1) + ':' + us.user);
+        console.log('Nombre :' + us.nombre);
+        console.log('Correo : ' + us.correo);
     });
 
     pedidos?.forEach((ped, index) => {
         console.log('Pedido ' + (index +1) + ':');
-        console.log('Id: ' + ped.id);
         console.log('Dirección: ' + ped.direccion);
         console.log('Nº de tarjeta: ' + ped.tarjeta);
+        console.log('Productos: ' + ped.productos);
     });
      
 

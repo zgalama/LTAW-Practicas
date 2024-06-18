@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="art5.css">
+    <link rel="stylesheet" href="art.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Sudadera </title>
+    <title> TITULO_PAG </title>
 
 </head>
 
@@ -24,34 +24,30 @@
         </div>
     </header>
 
-    <div class="container-title"> Sudadera</div>
+    <div class="container-title"> NOMBRE_PROD </div>
 
     <main>
-        <div class="container-img">
-            <img src="sudadera.PNG" alt="imagen CD">
+
+        <!-- CODIGO A IMPLEMENTAR EN TIENDA.JS
+         <div class="container-img">
+            <img src="LA.jpg" alt="imagen CD">
         </div>
+        -->
 
         <div class="container-info">
             <div class="precio">
-                <span>50.00€</span>
+                <span>20.00€</span>
             
-            </div>
-
-            <div class="container-details">
-                <div class="talla">
-                    <label for="talla">Talla</label>
-                    <select name="talla" id="talla">
-                        <option disabled selected value=""> Escoge una opción</option>
-                        <option value="S/M">S/M</option>
-                        <option value="M/L">M/L</option>
-                    </select>
-                </div>
             </div>
 
 
             <div class="container-add-cart">
                 <div class="container-quantity">
-                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity">
+                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity"/>
+                    <div class = 'btn-increment-decrement'>
+                        <i class = 'fa-solid fa-chevron-up' id="increment"></i>
+                        <i class = 'fa-solid fa-chevron-down' id="decrement"></i>
+                    </div>
                 </div>
                 <button class="btn-add-to-cart">
                     <i class='bx bx-plus'></i>
@@ -87,32 +83,32 @@
         <div class="card-list-products">
             <div class="card">
                 <div class="card-img">
-                    <a href="art4.html"><img src="cami.png" alt="camiseta"></a>
+                    <a href="art2.html"><img src="malamente.jpg" alt="disco malamente"></a>
                 </div>
                 <div class="info-card">
                     <div class="text-product">
-                        <h3> Camiseta</h3>
+                        <h3> Malamente CD</h3>
                         <p class="category">
-                            Ropa
+                            Música, CD's
                         </p>
                     </div>
-                    <div class="price"> 50.00€</div>
+                    <div class="price"> 20.00€</div>
                 </div>
             </div>
         
 
             <div class="card">
                 <div class="card-img">
-                    <a href="art6.html"><img src="casco.PNG" alt="casco"></a>
+                    <a href="art3.html"><img src="motomami.jpg" alt="disco malamente"></a>
                 </div>
                 <div class="info-card">
                     <div class="text-product">
-                        <h3>Casco</h3>
+                        <h3> Motomami CD</h3>
                         <p class="category">
-                            Accesorios
+                            Música, CD's
                         </p>
                     </div>
-                    <div class="price"> 80.00€</div>
+                    <div class="price"> 20.00€</div>
                 </div>
             </div>
         </div>

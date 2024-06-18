@@ -47,7 +47,8 @@ const server = http.createServer((req, res) => {
         'html': 'text/html',
         'css' : 'text/css',
         'avif' : 'image/avif',
-        'gif' : 'image/gif'
+        'gif' : 'image/gif',
+        'js' : 'application/javascript'
     };
 
 
