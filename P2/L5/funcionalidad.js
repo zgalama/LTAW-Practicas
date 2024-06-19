@@ -6,6 +6,7 @@ const toggleAddInfo = document.querySelector('.title-adit-info')
 const contentDescription = document.querySelector('.text-description')
 const contentAddInfo = document.querySelector('.text-adit-info')
 
+
 let valueByDefault = parseInt(inputQuantity.value)
 
 btnIncrement.addEventListener('click', () => {

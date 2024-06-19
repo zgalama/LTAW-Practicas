@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icono.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src = 'busq.js' defer></script>
 
 </head>
 
@@ -21,7 +22,12 @@
         <div class="nav cont">
             <a href="main.html" class="logo">MERCHANDISING ROSALIA</a>
             <div class="icons">
-                <!--BUSCADOR-->
+                <div class="cajabuscar"><form method="get" id="buscarform">
+                    <fieldset>
+                        <input type="text" id="s" value="" placeholder="Buscar"  />
+                        <input class="button" type="submit" value="==>"/>
+                    </fieldset>
+                    </form></div>
                 <a href ='pedido.html'><i class='bx bxs-shopping-bags' id ="carrito" data-quantitiy="0"></i></a>
                 <a href="login_registro.html"><i class='bx bxs-log-in' id ="login"></i>
                 <p>Log in</a></p>
@@ -33,18 +39,21 @@
         <div class="shop-content">
             <!-- PRODUCTO 1-->
             <div class="product-box">
-
+                <a href="producto.html/Los Angeles"><img src="LA.jpg" alt="imagen disco LA" class="product-img"></a>
+                <h2 class="product-title">Los Angeles</h2>
+                <span class="precio">20€</span>
+                <i class='bx bx-shopping-bag add-cart' ></i>
             </div>
             <!-- PRODUCTO 2-->
             <div class="product-box">
-                <a href="art2.html"><img src="malamente.jpg" alt="imagen ropa" class="product-img"></a>
+                <a href="producto.html/Malamente" nombre ='Malamente'><img src="malamente.jpg" alt="imagen disco malamente" class="product-img"></a>
                 <h2 class="product-title">Malamente</h2>
                 <span class="precio">20€</span>
                 <i class='bx bx-shopping-bag add-cart' ></i>
             </div>
             <!-- PRODUCTO 3-->
             <div class="product-box">
-                <a href="art3.html"><img src="motomami.jpg" alt="imagen ropa" class="product-img"></a>
+                <a href="producto.html/Motomami" nombre='Motomami'><img src="motomami.jpg" alt="imagen disco motomami" class="product-img"></a>
                 <h2 class="product-title">Motomami</h2>
                 <span class="precio">20€</span>
                 <i class='bx bx-shopping-bag add-cart' ></i>

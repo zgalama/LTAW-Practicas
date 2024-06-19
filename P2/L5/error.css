@@ -107,3 +107,18 @@ footer{
     border-radius: 5px;
 }
 
+/* Responsive */
+
+@media (max-width:1080px) {
+    .nav{
+        padding: 14px 0;
+    }
+    section{
+        padding: 3rem 0 2rem;
+    }
+
+    .cont{
+        margin: 0 auto;
+        width:90%;
+    }
+}

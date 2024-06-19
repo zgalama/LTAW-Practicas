@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="art.css">
+    <!--CSS-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title> TITULO_PAG </title>
 
@@ -28,11 +28,7 @@
 
     <main>
 
-        <!-- CODIGO A IMPLEMENTAR EN TIENDA.JS
-         <div class="container-img">
-            <img src="LA.jpg" alt="imagen CD">
-        </div>
-        -->
+        <!-- IMG_P-->
 
         <div class="container-info">
             <div class="precio">
@@ -49,10 +45,10 @@
                         <i class = 'fa-solid fa-chevron-down' id="decrement"></i>
                     </div>
                 </div>
-                <button class="btn-add-to-cart">
-                    <i class='bx bx-plus'></i>
-                    Añadir al carrito
-                </button>
+                <form action="/addCarrito" method="get">
+                    <input type="hidden" name="nombre_producto" value=NOMBRE_PROD>
+                    <input type="submit" value="Añadir al carrito">
+                </form>
             </div>
 
 
@@ -72,7 +68,7 @@
                     <i class='bx bx-chevron-down'></i>
                 </div>
                 <div class="text-adit-info hidden">
-                    <p>INFO_PROD</p>
+                    <p>Contiene poster 30x30cm</p>
                 </div>
             </div>
         </div>
@@ -82,13 +78,9 @@
         <h2> Productos relacionados</h2>
         <div class="card-list-products">
             <div class="card">
-                <!--PARA PONER EN JS-->
-                <!--<div class="card-img">
-                    <a href="art2.html"><img src="malamente.jpg" alt="disco malamente"></a>
-                </div>-->
+                <!--IMGR1-->
                 <div class="info-card">
                     <div class="text-product">
-                        <h3> RELACIONADO1</h3>
                         <p class="category">
                             Música, CD's
                         </p>
@@ -99,13 +91,9 @@
         
 
             <div class="card">
-                <!--PARA PONER EN JS-->
-                <!--<div class="card-img">
-                    <a href="art3.html"><img src="motomami.jpg" alt="disco malamente"></a>
-                </div>-->
+                <!--IMGR2-->
                 <div class="info-card">
                     <div class="text-product">
-                        <h3> RELACIONADO2</h3>
                         <p class="category">
                             Música, CD's
                         </p>

@@ -13,6 +13,71 @@
 
 }
 
+#buscarform {
+    padding-right: 50px;
+    float: left;
+    clear: both;
+    width: 100%;
+    position: relative;
+}
+
+
+#buscarform .search {
+    font-size: 15px;
+    top: 0px;
+    color: #260e0e;
+
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    height: 40px;
+    width: 45px;
+    text-align: center;
+    margin-right: 50px;
+}
+#buscarform fieldset { width: 100% }
+
+#s {
+    width: 100%;
+    background-color: #000000;
+    float: left;
+    padding: 8px 0;
+    text-indent: 10px;
+    color: #555555;
+    border: 1px solid #fff; 
+    box-sizing: border-box;
+    height: 42px;
+}
+
+.button{
+    right: 2px;
+    top: 3px;
+    border: 0;
+    width: 45px;
+    height: 40px;
+    cursor: pointer;
+    color: #a4a4a4;
+    transition: all 0.25s linear;
+    position: absolute;
+    margin-right: 50px;
+    font-weight: bold;
+    font-size: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root{
     --main-color: #fd4646;
     --text-color: #000000;

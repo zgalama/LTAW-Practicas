@@ -1,43 +1,35 @@
-[
-    {"producto": [
+{
+    "producto": [
         {
             "nombre": "Malamente",
             "descripcion": "Segundo disco de Rosalia con temas inéditos como son: Malamente, Pienso en tu mirá, Bagdad...",
             "precio" : "20€",
-            "stock": 5
+            "stock": 5,
+            "foto" : "LA.jpg",
+            "foto_r1" :"malamente.jpg",
+            "foto_r2" : "motomami.jpg"
+
         },
         {
             "nombre": "Los Angeles",
             "descripcion": "Primer disco de Rosalia con temas inéditos como son: Catalina, De plata, Te Venero...",
             "precio" : "20€",
-            "stock": 6 
+            "stock": 6,
+            "foto" : "malamente.jpg",
+            "foto_r1" :"LA.jpg",
+            "foto_r2" : "motomami.jpg"
         },
         {
             "nombre": "Motomami",
             "descripcion": "Tercer disco de Rosalia con temas inéditos como son: Delirio de Grandeza, Saoko, La Combi Versace...",
             "precio" : "20€",
-            "stock": 3 
-        },
-        {
-            "nombre": "Camiseta",
-            "descripcion": "Camiseta, color blanco, estampada con logo Motomami",
-            "precio" : "40€",
-            "stock": 4 
-        },
-        {
-            "nombre": "Sudadera",
-            "descripcion": "Sudadera negra con temática de la canción 'Candy'",
-            "precio" : "50€",
-            "stock": 3 
-        },
-        {
-            "nombre": "Casco",
-            "descripcion": "Casco homologado edición especial MOTOMAMI",
-            "precio" : "80€",
-            "stock": 5
+            "stock": 3,
+            "foto" : "motomami.jpg",
+            "foto_r2" :"malamente.jpg",
+            "foto_r1" : "LA.jpg"
         }
-    ]},
-    {"usuarios": [
+    ],
+    "usuarios": [
         {
             "user": "root",
             "nombre" : "Host",
@@ -48,14 +40,14 @@
             "nombre" : "Zaira",
             "correo" : "zai4@motomami.com"
         }
-    ]},
-    {"pedidos": [
+    ],
+    "pedidos": [
         {
             "id": 1,
             "direccion": "Calle Cabreja",
             "tarjeta":"3549-4353-5633-5324",
             "productos" : ["Malamente"]
         }
-    ]}
-]
+    ]
+}
 
