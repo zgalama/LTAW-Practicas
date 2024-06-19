@@ -23,7 +23,7 @@
 
 
 body{
-    background-image: url('../fotos/fondon.jpeg');
+    background-image: url('fondon.jpeg');
     background-repeat: repeat;
 }
 
@@ -70,12 +70,14 @@ header{
     font-size: 1.8rem;
     cursor:pointer;
     padding-left: 10px;
+    color:black;
 }
     
 
 #carrito{
     font-size: 1.8rem;
     cursor:pointer;
+    color: black;
 }
 
 #carrito[data-quantitiy]::after{
