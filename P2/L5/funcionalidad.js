@@ -7,22 +7,6 @@ const contentDescription = document.querySelector('.text-description')
 const contentAddInfo = document.querySelector('.text-adit-info')
 
 
-let valueByDefault = parseInt(inputQuantity.value)
-
-btnIncrement.addEventListener('click', () => {
-    valueByDefault += 1
-    inputQuantity.value = valueByDefault
-})
-
-btnDecrement.addEventListener('click', () => {
-
-    if (valueByDefault === 1){
-        return
-    }
-    valueByDefault -= 1
-    inputQuantity.value =valueByDefault
-})
-
 
 toggleDescription.addEventListener('click', () => {
     contentDescription.classList.toggle('hidden');
@@ -30,5 +14,20 @@ toggleDescription.addEventListener('click', () => {
 
 toggleAddInfo.addEventListener('click', () =>{
     contentAddInfo.classList.toggle('hidden');
+})
+btnIncrement.addEventListener('click', () => {
+    valueByDefault += 1
+    inputQuantity.value = valueByDefault
+})
+
+
+let valueByDefault = parseInt(inputQuantity.value)
+btnDecrement.addEventListener('click', () => {
+
+    if (valueByDefault === 1){
+        return
+    }
+    valueByDefault -= 1
+    inputQuantity.value =valueByDefault
 })
 

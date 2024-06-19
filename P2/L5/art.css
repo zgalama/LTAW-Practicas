@@ -34,6 +34,55 @@ header{
     z-index: 100;
     background-color: #cc2929;
 }
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+}
+
+.logo{
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+}
+
+.icons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#login{
+    font-size: 1.8rem;
+    cursor:pointer;
+    padding-left: 10px;
+    color:black;
+}
+    
+
+#carrito{
+    font-size: 1.8rem;
+    cursor:pointer;
+    color: black;
+}
+
+#carrito[data-quantitiy]::after{
+    contain:''; 
+    top:0;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    background: var(--text-color);
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .container-title{
     margin-top: 120px;

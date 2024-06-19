@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="icono.png" type="image/x-icon">
-    <!--CSS-->
+    <link rel="stylesheet" href="art.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title> TITULO_PAG </title>
+    <script src="funcionalidad.js" defer></script>
+    <title>L.A </title>
 
 </head>
 
@@ -19,16 +20,21 @@
     <header>
         <div class="nav cont">
             <a href="main.html" class="logo">MERCHANDISING ROSALIA</a>
-            <i class='bx bxs-shopping-bags' id="carrito" data-quantitiy="0"></i>
+            <div class="icons">
+                <a href ='pedido.html'><i class='bx bxs-shopping-bags' id ="carrito" data-quantitiy="0"></i></a>
+                <a href="login_registro.html"><i class='bx bxs-log-in' id ="login"></i>
+                <p>Log in</a></p>
+            </div>
 
         </div>
     </header>
 
-    <div class="container-title"> NOMBRE_PROD </div>
+    <div class="container-title"> Los Angeles CD</div>
 
     <main>
-
-        <!-- IMG_P-->
+        <div class="container-img">
+            <img src="LA.jpg" alt="imagen CD">
+        </div>
 
         <div class="container-info">
             <div class="precio">
@@ -39,16 +45,16 @@
 
             <div class="container-add-cart">
                 <div class="container-quantity">
-                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity"/>
+                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity">
                     <div class = 'btn-increment-decrement'>
                         <i class = 'fa-solid fa-chevron-up' id="increment"></i>
                         <i class = 'fa-solid fa-chevron-down' id="decrement"></i>
                     </div>
                 </div>
-                <form action="/addCarrito" method="get">
-                    <input type="hidden" name="nombre_producto" value=NOMBRE_PROD>
-                    <input type="submit" value="Añadir al carrito">
-                </form>
+                <button class="btn-add-to-cart">
+                    <i class='bx bx-plus'></i>
+                    Añadir al carrito
+                </button>
             </div>
 
 
@@ -58,7 +64,7 @@
                     <i class='bx bx-chevron-down'></i>
                 </div>
                 <div class="text-description hidden">
-                    <p> DESCRIPCION_PROD</p>
+                    <p> Primer disco de Rosalia con temas inéditos como son: Catalina, De plata, Te Venero...</p>
                 </div>
             </div>
 
@@ -68,7 +74,7 @@
                     <i class='bx bx-chevron-down'></i>
                 </div>
                 <div class="text-adit-info hidden">
-                    <p>Contiene poster 30x30cm</p>
+                    <p>Contiene un poster de 30x30cm. </p>
                 </div>
             </div>
         </div>
@@ -78,9 +84,12 @@
         <h2> Productos relacionados</h2>
         <div class="card-list-products">
             <div class="card">
-                <!--IMGR1-->
+                <div class="card-img">
+                    <a href="art2.html"><img src="malamente.jpg" alt="disco malamente"></a>
+                </div>
                 <div class="info-card">
                     <div class="text-product">
+                        <a href="art2.html"><h3> Malamente CD</h3></a>
                         <p class="category">
                             Música, CD's
                         </p>
@@ -91,9 +100,12 @@
         
 
             <div class="card">
-                <!--IMGR2-->
+                <div class="card-img">
+                    <a href="art3.html"><img src="motomami.jpg" alt="disco malamente"></a>
+                </div>
                 <div class="info-card">
                     <div class="text-product">
+                        <a href="art3.html"><h3> Motomami CD</h3></a>
                         <p class="category">
                             Música, CD's
                         </p>

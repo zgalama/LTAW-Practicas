@@ -33,12 +33,26 @@
         {
             "user": "root",
             "nombre" : "Host",
-            "correo" : "host@jejej.com"
+            "correo" : "host@jejej.com",
+            "contrasena" : "1234"
         },
         {
             "user": "zairaalm",
             "nombre" : "Zaira",
-            "correo" : "zai4@motomami.com"
+            "correo" : "zai4@motomami.com",
+            "contrasena" : "3425"
+        },
+        {
+            "user": "",
+            "nombre" : "",
+            "correo" : "",
+            "contrasena" : ""
+        },
+        {
+            "user": "",
+            "nombre" : "",
+            "correo" : "",
+            "contrasena" : ""
         }
     ],
     "pedidos": [

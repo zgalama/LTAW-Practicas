@@ -91,12 +91,12 @@ form {
     min-width: 238px;
     padding: 0 10px;
 }
-form.sign-in-form {
+form.log-in {
     opacity: 1;
     transition: 0.5s ease-in-out;
     transition-delay: 1s;
 }
-form.sign-up-form {
+form.register {
     opacity: 0;
     transition: 0.5s ease-in-out;
     transition-delay: 1s;
@@ -213,10 +213,10 @@ form.sign-up-form {
 .container.sign-up-mode .left-panel .content {
     transform: translateX(0);
 }
-.container.sign-up-mode form.sign-in-form {
+.container.sign-up-mode form.log-in {
     opacity: 0;
 }
-.container.sign-up-mode form.sign-up-form {
+.container.sign-up-mode form.register {
     opacity: 1;
 }
 .container.sign-up-mode .right-panel {
@@ -239,14 +239,14 @@ form.sign-up-form {
     form {
         width: 80%;
     }
-    form.sign-up-form {
+    form.register {
         display: none;
     }
-    .container.sign-up-mode2 form.sign-up-form {
+    .container.sign-up-mode2 form.register {
         display: flex;
         opacity: 1;
     }
-    .container.sign-up-mode2 form.sign-in-form {
+    .container.sign-up-mode2 form.log-in {
         display: none;
     }
     .panels-container {
