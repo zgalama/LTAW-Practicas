@@ -20,32 +20,32 @@
     </header>
     <div class="container">
         <div class="signin-signup">
-            <form action=""  class="log-in">
+            <form action="/procesar"  method ="get" accept-charset=utf-8 class="log-in">
                 <h2 class="title">Inicia sesión</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" id = "name" placeholder="Usuario">
+                    <input type="text" name = "name" placeholder="Usuario">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id ="password" placeholder="Contraseña">
+                    <input type="password" name ="password" placeholder="Contraseña">
                 </div>
                 <input type="submit" value="Entrar" class="btn">
             
             </form>
-            <form action="" class="register">
+            <form action="/procesar" method ="get" accept-charset=utf-8 class="register">
                 <h2 class="title">Registro</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="name" placeholder="Usuario">
+                    <input type="text" name="name" placeholder="Usuario">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" id="email" placeholder="Email">
+                    <input type="text" name="email" placeholder="Email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="Contraseña">
+                    <input type="password" name="password" placeholder="Contraseña">
                 </div>
                 <input type="submit" value="Regístrame!" class="btn">
             </form>

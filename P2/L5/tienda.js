@@ -64,17 +64,55 @@ const server = http.createServer((req, res) => {
         const filePath = path.join(recurso, 'main.html'); 
         leerFichero(filePath, (err,data) => {
             if (err){
-                code_404(res)
+                code_404(res);
             }else{
-                const tipo ="text/html"
-                code_200(res,data,tipo)
+                const tipo ="text/html";
+                code_200(res,data,tipo);
             }
-        })
+        });
 
+    }  else if (req.url.startsWith('/procesar')) { 
+        const urlParams = new URLSearchParams(req.url.split('?')[1]);
+        const username = urlParams.get('username');
+        const password = urlParams.get('password');
+        const email = urlParams.get('email'); // Obtener el email si existe
+
+        if (email) { // Si se proporciona un email, es un registro
+            // Lógica de registro
+            const nuevoUsuario = {
+                nombre_usuario: username,
+                password: password,
+                email: email
+            };
+
+            productos.push(nuevoUsuario); // Agregar el nuevo usuario al array
+
+            // Guardar los cambios en el archivo JSON
+            fs.writeFileSync(FICHERO_JSON, JSON.stringify({ producto: productos }, null, 2)); 
+
+            const data = JSON.stringify({ success: true, message: "¡Registro exitoso!" });
+            code_200(res, data, 'application/json');
+        } else { // Si no hay email, es un inicio de sesión
+            // Lógica de inicio de sesión
+            let usuarioEncontrado = productos.find(element => element.nombre_usuario == username);
+
+            if (usuarioEncontrado) {
+                if (usuarioEncontrado.password == password) {
+                    const data = JSON.stringify({ success: true, message: `¡Has iniciado sesión correctamente! Bienvenido: ${username}` });
+                    code_200(res, data, 'application/json');
+                } else {
+                    const data = JSON.stringify({ success: false, message: "CONTRASEÑA INCORRECTA" });
+                    code_200(res, data, 'application/json');
+                }
+            } else {
+                const data = JSON.stringify({ success: false, message: "USUARIO NO REGISTRADO" });
+                code_200(res, data, 'application/json');
+            }
+        }
     } else {
         // Intenta servir como archivo estático
         const filePath = path.join(recurso, req.url);
-        leerFichero(filePath,'utf-8', (err,data) => {
+        leerFichero(filePath, (err,data) => {
             if (err){
                 code_404(res);
             }else{
