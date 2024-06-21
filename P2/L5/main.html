@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icono.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src = 'busq.js' defer></script>
 
 </head>
 
@@ -22,12 +21,13 @@
         <div class="nav cont">
             <a href="main.html" class="logo">MERCHANDISING ROSALIA</a>
             <div class="icons">
-                <div class="cajabuscar"><form method="get" id="buscarform">
+                <div class="cajabuscar">
+                    <form action ="/buscar" method="get" id="buscarform">
                     <fieldset>
-                        <input type="text" id="s" value="" placeholder="Buscar"  />
-                        <input class="button" type="submit" value="==>"/>
+                        <input type="text" id="s" name="s" value="" placeholder="Buscar"/>
                     </fieldset>
-                    </form></div>
+                    </form>
+                </div>
                 <a href ='pedido.html'><i class='bx bxs-shopping-bags' id ="carrito" data-quantitiy="0"></i></a>
                 <a href="login_registro.html"><i class='bx bxs-log-in' id ="login"></i>
                 <!--<i class='bx bxs-user-check'></i>-->

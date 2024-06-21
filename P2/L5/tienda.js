@@ -15,6 +15,8 @@ const FICHERO_JSON = 'tienda.json'
 let productos = []
 const tienda_json = fs.readFileSync(FICHERO_JSON, 'utf-8')
 productos = JSON.parse(tienda_json).producto;
+usuarios = JSON.parse(tienda_json).usuarios;
+
 
 // Para el content_type de los recursos a solicitar 
 const tipo = {
@@ -59,6 +61,30 @@ function leerFichero(filePath, callback) {
 const server = http.createServer((req, res) => {
     console.log('Request received:', req.url);
 
+        //-- Variable para guardar el usuario
+        let user;
+
+        // Obtiende las cookies
+        const cookie = req.headers.cookie;
+        if (cookie) {
+        
+            //-- Obtener un array con todos los pares nombre-valor
+            let pares = cookie.split(";");
+        
+            //-- Recorrer todos los pares nombre-valor
+            pares.forEach((element, index) => {
+        
+              //-- Obtener los nombres y valores por separado
+              let [nombre, valor] = element.split('=');
+        
+              //-- Leer el usuario
+              //-- Solo si el nombre es 'user'
+              if (nombre.trim() === 'user') {
+                user = valor;
+              }
+            });
+        }
+
     if (req.url === '/' || req.url === '/main.html') {
         // Sirve la página principal
         const filePath = path.join(recurso, 'main.html'); 
@@ -85,16 +111,17 @@ const server = http.createServer((req, res) => {
                 email: email
             };
 
-            productos.push(nuevoUsuario); // Agregar el nuevo usuario al array
+            usuarios.push(nuevoUsuario); // Agregar el nuevo usuario al array
 
             // Guardar los cambios en el archivo JSON
-            fs.writeFileSync(FICHERO_JSON, JSON.stringify({ producto: productos }, null, 2)); 
+            fs.writeFileSync(FICHERO_JSON, JSON.stringify({ usuario: usuarios }, null, 2)); 
 
             const data = JSON.stringify({ success: true, message: "¡Registro exitoso!" });
             code_200(res, data, 'application/json');
+
         } else { // Si no hay email, es un inicio de sesión
             // Lógica de inicio de sesión
-            let usuarioEncontrado = productos.find(element => element.nombre_usuario == username);
+            let usuarioEncontrado = usuarios.find(element => element.nombre_usuario == username);
 
             if (usuarioEncontrado) {
                 if (usuarioEncontrado.password == password) {
@@ -109,6 +136,35 @@ const server = http.createServer((req, res) => {
                 code_200(res, data, 'application/json');
             }
         }
+
+    }else if (req.url.startsWith('/buscar?')) {
+        const urlParams = new URLSearchParams(req.url.split('?')[1]);
+        const searchTerm = urlParams.get('s'); // Obtiene el término de búsqueda (parámetro 's')
+
+        const resultadosBusqueda = productos.filter(producto => {
+            return producto.nombre.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+
+        // Envía la página principal con los resultados incrustados en un alert
+        leerFichero('main.html', (err, data) => {
+            if (err) {
+                code_404(res);
+            } else {
+                let resultadosHTML = '';
+                if (resultadosBusqueda.length > 0) {
+                    resultadosHTML = resultadosBusqueda.map(p => `<li>${p.nombre} - ${p.precio}€</li>`).join('');
+                    resultadosHTML = `<ul>${resultadosHTML}</ul>`;
+                } else {
+                    resultadosHTML = 'No se encontraron resultados.';
+                }
+
+                const htmlConAlerta = data.toString().replace(
+                    '</body>',
+                    `<script>alert('Resultados de la búsqueda:\\n${resultadosHTML}');</script></body>`
+                );
+                code_200(res, htmlConAlerta, tipo.html);
+            }
+        });
     } else {
         // Intenta servir como archivo estático
         const filePath = path.join(recurso, req.url);
