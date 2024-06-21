@@ -20,11 +20,11 @@
     </header>
     <div class="container">
         <div class="signin-signup">
-            <form action="/procesar"  method ="get" accept-charset=utf-8 class="log-in">
+            <form action="/login"  method ="get" accept-charset=utf-8 class="log-in">
                 <h2 class="title">Inicia sesión</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" name = "name" placeholder="Usuario">
+                    <input type="text" name = "username" placeholder="Usuario">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -33,7 +33,8 @@
                 <input type="submit" value="Entrar" class="btn">
             
             </form>
-            <form action="/procesar" method ="get" accept-charset=utf-8 class="register">
+            <!-- Cambio a post -->
+            <form action="/registro" method ="post" accept-charset=utf-8 class="register">
                 <h2 class="title">Registro</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>

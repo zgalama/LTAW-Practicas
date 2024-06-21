@@ -59,31 +59,34 @@ function leerFichero(filePath, callback) {
 
 
 const server = http.createServer((req, res) => {
+
+    const myurl = new URL(req.url,'http://' + req.headers['host']);
+
     console.log('Request received:', req.url);
 
-        //-- Variable para guardar el usuario
-        let user;
+        // //-- Variable para guardar el usuario
+        // let user;
 
-        // Obtiende las cookies
-        const cookie = req.headers.cookie;
-        if (cookie) {
+        // // Obtiende las cookies
+        // const cookie = req.headers.cookie;
+        // if (cookie) {
         
-            //-- Obtener un array con todos los pares nombre-valor
-            let pares = cookie.split(";");
+        //     //-- Obtener un array con todos los pares nombre-valor
+        //     let pares = cookie.split(";");
         
-            //-- Recorrer todos los pares nombre-valor
-            pares.forEach((element, index) => {
+        //     //-- Recorrer todos los pares nombre-valor
+        //     pares.forEach((element, index) => {
         
-              //-- Obtener los nombres y valores por separado
-              let [nombre, valor] = element.split('=');
+        //       //-- Obtener los nombres y valores por separado
+        //       let [nombre, valor] = element.split('=');
         
-              //-- Leer el usuario
-              //-- Solo si el nombre es 'user'
-              if (nombre.trim() === 'user') {
-                user = valor;
-              }
-            });
-        }
+        //       //-- Leer el usuario
+        //       //-- Solo si el nombre es 'user'
+        //       if (nombre.trim() === 'user') {
+        //         user = valor;
+        //       }
+        //     });
+        // }
 
     if (req.url === '/' || req.url === '/main.html') {
         // Sirve la página principal
@@ -97,47 +100,58 @@ const server = http.createServer((req, res) => {
             }
         });
 
-    }  else if (req.url.startsWith('/procesar')) { 
-        const urlParams = new URLSearchParams(req.url.split('?')[1]);
-        const username = urlParams.get('username');
-        const password = urlParams.get('password');
-        const email = urlParams.get('email'); // Obtener el email si existe
+    }  else if (myurl.pathname == '/login') { 
+        // const urlParams = new URLSearchParams(req.url.split('?')[1]);
+        const username = myurl.URLSearchParams.get('username');
+        console.log("USERNAME", username);
+        const password =  myurl.URLSearchParams.get('password');
+        console.log("PASS", password);
+        // const email = urlParams.get('email'); // Obtener el email si existe
 
-        if (email) { // Si se proporciona un email, es un registro
-            // Lógica de registro
-            const nuevoUsuario = {
-                nombre_usuario: username,
-                password: password,
-                email: email
-            };
+        // usuarios.forEach( usuario => {
+        //     if (usuario.user === username && usuario.contrasena === password) {
+                
+        //     } else if (usuario.user === username && usuario.contrasena != password) {
+                
+        //     }
+            // Que me lo lleve a la página del log in pero con aviso
 
-            usuarios.push(nuevoUsuario); // Agregar el nuevo usuario al array
+        // })
+        // if (email) { // Si se proporciona un email, es un registro
+        //     // Lógica de registro
+        //     const nuevoUsuario = {
+        //         nombre_usuario: username,
+        //         password: password,
+        //         email: email
+        //     };
 
-            // Guardar los cambios en el archivo JSON
-            fs.writeFileSync(FICHERO_JSON, JSON.stringify({ usuario: usuarios }, null, 2)); 
+        //     usuarios.push(nuevoUsuario); // Agregar el nuevo usuario al array
 
-            const data = JSON.stringify({ success: true, message: "¡Registro exitoso!" });
-            code_200(res, data, 'application/json');
+        //     // Guardar los cambios en el archivo JSON
+        //     fs.writeFileSync(FICHERO_JSON, JSON.stringify({ usuario: usuarios }, null, 2)); 
 
-        } else { // Si no hay email, es un inicio de sesión
-            // Lógica de inicio de sesión
-            let usuarioEncontrado = usuarios.find(element => element.nombre_usuario == username);
+        //     const data = JSON.stringify({ success: true, message: "¡Registro exitoso!" });
+        //     code_200(res, data, 'application/json');
 
-            if (usuarioEncontrado) {
-                if (usuarioEncontrado.password == password) {
-                    const data = JSON.stringify({ success: true, message: `¡Has iniciado sesión correctamente! Bienvenido: ${username}` });
-                    code_200(res, data, 'application/json');
-                } else {
-                    const data = JSON.stringify({ success: false, message: "CONTRASEÑA INCORRECTA" });
-                    code_200(res, data, 'application/json');
-                }
-            } else {
-                const data = JSON.stringify({ success: false, message: "USUARIO NO REGISTRADO" });
-                code_200(res, data, 'application/json');
-            }
-        }
+        // } else { // Si no hay email, es un inicio de sesión
+        //     // Lógica de inicio de sesión
+        //     let usuarioEncontrado = usuarios.find(element => element.nombre_usuario == username);
 
-    }else if (req.url.startsWith('/buscar?')) {
+        //     if (usuarioEncontrado) {
+        //         if (usuarioEncontrado.password == password) {
+        //             const data = JSON.stringify({ success: true, message: `¡Has iniciado sesión correctamente! Bienvenido: ${username}` });
+        //             code_200(res, data, 'application/json');
+        //         } else {
+        //             const data = JSON.stringify({ success: false, message: "CONTRASEÑA INCORRECTA" });
+        //             code_200(res, data, 'application/json');
+        //         }
+        //     } else {
+        //         const data = JSON.stringify({ success: false, message: "USUARIO NO REGISTRADO" });
+        //         code_200(res, data, 'application/json');
+        //     }
+        // }
+
+    } else if (req.url.startsWith('/buscar?')) {
         const urlParams = new URLSearchParams(req.url.split('?')[1]);
         const searchTerm = urlParams.get('s'); // Obtiene el término de búsqueda (parámetro 's')
 
