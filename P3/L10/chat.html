@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icono.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <!-- Cargar la biblioteca Socket.IO. Nos la debe entregar el servidor -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Cliente que usa los Sockets.io-->
+  <script src="client.js" defer></script>
+
+  <title>Chat</title>
+</head>
+
+<body>
+  <h1>Chat Motomami! <img src="chat_logo.PNG" id="logo"></h1>
+  <div class="container">
+      <div class="user-list">
+        <h3> 🟢 Usuarios </h3>
+        <ul id="user-list"></ul>
+      </div>
+
+      <div class="chat">
+        <h3>Mensajes recibidos: </h3>
+        <p id="display"></p>
+        <input type="text" autocomplete="off" id="msg">
+      </div>
+    </div>
+  
+    <!-- Elemento de audio para reproducir el sonido -->
+    <audio id="sonido" volume="0.7">
+      <source src="P3_sound.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
