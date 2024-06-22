@@ -65,10 +65,9 @@ socket.on('userList', (users) => {
         const div = document.createElement('div');
         div.classList.add('user-item');
         
-        // Verificar si el usuario es el propio usuario y mostrar como "NICKNAME (Yo)"
         if (user === nickname) {
             div.textContent = user + ' (Tú)';
-            div.style.color = 'green'; // Aplicar el color rosa al propio usuario
+            div.style.color = 'green'; 
         } else {
             div.textContent = user;
         }
