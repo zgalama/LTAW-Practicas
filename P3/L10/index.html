@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Permitir sólo scripts y ficheros de la máquina local -->
+    <!-- Con esto se elimina el aviso de seguridad: Insecure Content-Security-Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
+
+    <!-- Hoja de estilo de la interfaz -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Cargar el proceso asociado a esta página -->
+    <script src="index.js" defer></script>
+
+    <title>Server Chat Motomami</title>
+
+</head>
+<body>
+    <h1> HOME CHAT (Server)<img src="chat_logo.PNG" id="logo"></h1>
+
+    <!-- Contenedor de las columnas -->
+    <div class="container">
+        <!-- Columna izquierda -->
+        <div class="column" id="izquierda">
+            <h2>Información del servidor</h2>
+            <div class = 'info'>
+                <p>⚫ Versión de Node: <span id="nodeVersion"></span></p>
+                <p>⚫ Versión de Electron: <span id="electronVersion"></span></p>
+                <p>⚫ Versión de Chrome: <span id="chromeVersion"></span></p>
+            </div>
+            <div class="info">
+                <p>⚫ Usuarios conectados: <span id="users-connected"></span></p>
+                <p>⚫ URL del chat: http://<span id="chat-ip"></span></p>
+            </div>
+            <div class="info">
+                <p>⚫ Arquitectura: <span id="arquitectura"></span></p>
+                <p>⚫ Plataforma: <span id="plataforma"></span></p>
+                <p>⚫ Directorio: <span id="directorio"></span></p>
+            </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="column" id="derecha">
+            <h2>Mensajes</h2>
+            <div id="serverMessages"></div>
+            <button id ='btn'>Enviar mensaje a todos</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

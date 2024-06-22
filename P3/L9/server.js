@@ -49,7 +49,7 @@ function comandos(msg, socket, nickname) {
             sendToClient(socket, `Número de usuarios: ${num_users}`);
             break;
         case 'hello':
-            sendToClient(socket, 'Buenas, espero que todo le vaya bien');
+            sendToClient(socket, 'Hola! Que tengas un buen día!');
             break;
         case 'date':
             sendToClient(socket, `La fecha actual es: ${new Date().toLocaleDateString()}`);
