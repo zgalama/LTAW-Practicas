@@ -106,50 +106,7 @@ const server = http.createServer((req, res) => {
         console.log("USERNAME", username);
         const password =  myurl.URLSearchParams.get('password');
         console.log("PASS", password);
-        // const email = urlParams.get('email'); // Obtener el email si existe
 
-        // usuarios.forEach( usuario => {
-        //     if (usuario.user === username && usuario.contrasena === password) {
-                
-        //     } else if (usuario.user === username && usuario.contrasena != password) {
-                
-        //     }
-            // Que me lo lleve a la página del log in pero con aviso
-
-        // })
-        // if (email) { // Si se proporciona un email, es un registro
-        //     // Lógica de registro
-        //     const nuevoUsuario = {
-        //         nombre_usuario: username,
-        //         password: password,
-        //         email: email
-        //     };
-
-        //     usuarios.push(nuevoUsuario); // Agregar el nuevo usuario al array
-
-        //     // Guardar los cambios en el archivo JSON
-        //     fs.writeFileSync(FICHERO_JSON, JSON.stringify({ usuario: usuarios }, null, 2)); 
-
-        //     const data = JSON.stringify({ success: true, message: "¡Registro exitoso!" });
-        //     code_200(res, data, 'application/json');
-
-        // } else { // Si no hay email, es un inicio de sesión
-        //     // Lógica de inicio de sesión
-        //     let usuarioEncontrado = usuarios.find(element => element.nombre_usuario == username);
-
-        //     if (usuarioEncontrado) {
-        //         if (usuarioEncontrado.password == password) {
-        //             const data = JSON.stringify({ success: true, message: `¡Has iniciado sesión correctamente! Bienvenido: ${username}` });
-        //             code_200(res, data, 'application/json');
-        //         } else {
-        //             const data = JSON.stringify({ success: false, message: "CONTRASEÑA INCORRECTA" });
-        //             code_200(res, data, 'application/json');
-        //         }
-        //     } else {
-        //         const data = JSON.stringify({ success: false, message: "USUARIO NO REGISTRADO" });
-        //         code_200(res, data, 'application/json');
-        //     }
-        // }
 
     } else if (req.url.startsWith('/buscar?')) {
         const urlParams = new URLSearchParams(req.url.split('?')[1]);
