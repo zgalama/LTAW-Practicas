@@ -80,24 +80,20 @@ button {
 }
 
 #btn {
-  display: block; /* Hacer que el botón sea un bloque para aplicar dimensiones */
-  margin: auto; /* Margen automático para centrar horizontalmente */
-  padding: 10px; /* Relleno interno para separar el contenido del borde */
-  background-color: #b16b5f; /* Color de fondo del botón */
-  color: white; /* Color de texto del botón */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Esquinas redondeadas */
-  cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+  display: block;
+  margin: auto; 
+  padding: 10px; 
+  background-color: #b16b5f; 
+  color: white; 
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer; 
 }
-
-/* Estilo para el botón al pasar el ratón sobre él */
 button:hover {
   background-color: #993fbd;
 }
-
-/* Agregar estilo para el margen entre las columnas */
 .column + .column {
-  margin-left: 20px; /* Ajusta el valor según sea necesario */
+  margin-left: 20px; 
 }
 
 #derecha {
